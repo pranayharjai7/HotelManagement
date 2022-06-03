@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="Dependencies added: H2database and hibernate">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="persistence.xml added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +33,7 @@
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -60,8 +56,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Pranay/Projects/IdeaProjects/HotelManagement/src/main/resources",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
@@ -93,7 +89,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654289705858</updated>
-      <workItem from="1654289708482" duration="6051000" />
+      <workItem from="1654289708482" duration="6913000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel Management Project Initiated">
       <created>1654290549853</created>
@@ -116,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654293450889</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="persistence.xml added">
+      <created>1654296758239</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654296758239</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +153,7 @@
     <MESSAGE value="Hotel Management Project Initiated" />
     <MESSAGE value="Version changed from 1.0 to 1.1" />
     <MESSAGE value="Dependencies added: H2database and hibernate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dependencies added: H2database and hibernate" />
+    <MESSAGE value="persistence.xml added" />
+    <option name="LAST_COMMIT_MESSAGE" value="persistence.xml added" />
   </component>
 </project>
