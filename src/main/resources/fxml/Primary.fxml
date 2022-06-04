@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pranayharjai.hotelmanagement.Controllers.PrimaryController">
+   <children>
+      <AnchorPane prefHeight="650.0" prefWidth="850.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="650.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/primary.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="100.0" layoutY="76.0" text="Hotel Management">
+               <font>
+                  <Font name="Lucida Handwriting Italic" size="60.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="0.8750000040639531" startX="1.0" startY="0.37878787878787884">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.2535516619682312" green="0.13009746372699738" blue="0.7473683953285217" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8315789699554443" green="0.1293567270040512" blue="0.1293567270040512" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Button layoutX="339.0" layoutY="483.0" mnemonicParsing="false" onAction="#startButtonClicked" style="-fx-background-radius: 40;" text="START">
+               <font>
+                  <Font name="Lucida Handwriting Italic" size="36.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

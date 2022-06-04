@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="HotelManagement-1.2 started" />
+    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="JavaFX controls and fxml dependencies added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/PrimaryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/primary.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Primary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -20,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="HotelManagement-1.2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,6 +73,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pranayharjai.hotelmanagement.Main" />
       <module name="HotelManagement" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;javafx-sdk-18.0.1/lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.pranayharjai.hotelmanagement.*" />
@@ -134,7 +142,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654367498250</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="HotelManagement-1.2.1 started">
+      <created>1654367846503</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654367846503</updated>
+    </task>
+    <task id="LOCAL-00008" summary="JavaFX controls and fxml dependencies added">
+      <created>1654368040486</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654368040486</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +173,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HotelManagement-1.2" />
+                        <option value="HotelManagement-1.2.1" />
                       </list>
                     </value>
                   </entry>
@@ -172,6 +194,8 @@
     <MESSAGE value="com.h2database scope changed to compile." />
     <MESSAGE value="Started the database." />
     <MESSAGE value="HotelManagement-1.2 started" />
-    <option name="LAST_COMMIT_MESSAGE" value="HotelManagement-1.2 started" />
+    <MESSAGE value="HotelManagement-1.2.1 started" />
+    <MESSAGE value="JavaFX controls and fxml dependencies added" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaFX controls and fxml dependencies added" />
   </component>
 </project>
