@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="JavaFX controls and fxml dependencies added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/PrimaryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/primary.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Primary.fxml" afterDir="false" />
+    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="Version changed from 1.2.1 to 1.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,13 +58,18 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Pranay/Projects/IdeaProjects/HotelManagement/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Pranay/Projects/IdeaProjects/HotelManagement&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Pranay\Projects\IdeaProjects\HotelManagement" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pranayharjai.hotelmanagement.Main" />
@@ -99,6 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654289705858</updated>
       <workItem from="1654289708482" duration="10474000" />
+      <workItem from="1654460048314" duration="785000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel Management Project Initiated">
       <created>1654290549853</created>
@@ -173,7 +175,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HotelManagement-1.2.1" />
+                        <option value="HotelManagement-1.2" />
                       </list>
                     </value>
                   </entry>
