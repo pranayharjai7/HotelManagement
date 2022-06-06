@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="Version changed from 1.2.1 to 1.2">
+    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="Login.fxml for Login and Register created">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/password.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/primary1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/username.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/PrimaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Primary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +41,13 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
@@ -51,22 +63,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Pranay/Projects/IdeaProjects/HotelManagement&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Pranay/Projects/IdeaProjects/HotelManagement/src/main/resources/Images",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Pranay\Projects\IdeaProjects\HotelManagement\src\main\resources\Images" />
       <recent name="C:\Pranay\Projects\IdeaProjects\HotelManagement" />
     </key>
   </component>
@@ -100,7 +113,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654289705858</updated>
       <workItem from="1654289708482" duration="10474000" />
-      <workItem from="1654460048314" duration="785000" />
+      <workItem from="1654460048314" duration="13302000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel Management Project Initiated">
       <created>1654290549853</created>
@@ -158,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654368040486</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Version changed from 1.2 to 1.2.2">
+      <created>1654461203945</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654461203945</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +218,8 @@
     <MESSAGE value="HotelManagement-1.2 started" />
     <MESSAGE value="HotelManagement-1.2.1 started" />
     <MESSAGE value="JavaFX controls and fxml dependencies added" />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaFX controls and fxml dependencies added" />
+    <MESSAGE value="Version changed from 1.2 to 1.2.2" />
+    <MESSAGE value="Login.fxml for Login and Register created" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login.fxml for Login and Register created" />
   </component>
 </project>
