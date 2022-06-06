@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="Login.fxml for Login and Register created">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/email.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/password.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/primary1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/username.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Login.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/PrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Primary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654289705858</updated>
       <workItem from="1654289708482" duration="10474000" />
-      <workItem from="1654460048314" duration="13302000" />
+      <workItem from="1654460048314" duration="24697000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel Management Project Initiated">
       <created>1654290549853</created>
@@ -178,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654461203945</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Login.fxml for Login and Register created">
+      <created>1654523609636</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654523609636</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

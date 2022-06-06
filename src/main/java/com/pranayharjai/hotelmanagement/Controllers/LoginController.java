@@ -1,9 +1,8 @@
 package com.pranayharjai.hotelmanagement.Controllers;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
@@ -21,35 +20,76 @@ public class LoginController {
     public TextField usernameRegisterTextField;
     public TextField emailRegisterTextField;
     public PasswordField passwordRegisterPasswordField;
-    public TextField keyRegisterTextField1;
+    public TextField keyRegisterTextField;
+    public CheckBox showPasswordCheckBox;
+    public Button loginButton;
+    private TextField passwordLoginTextField = new TextField();
 
 
-    public void loginMenuButtonClicked(ActionEvent actionEvent) {
-        loginMenuButton.setDisable(true);
-        registerMenuButton.setDisable(false);
-        menuLine.setLayoutX(120);
-        loginMenuAnchorPane.setDisable(false);
-        loginMenuAnchorPane.setOpacity(1);
-        registerMenuAnchorPane.setDisable(true);
-        registerMenuAnchorPane.setOpacity(0);
-    }
-
-    public void registerMenuButtonClicked(ActionEvent actionEvent) {
-        loginMenuButton.setDisable(false);
-        registerMenuButton.setDisable(true);
-        menuLine.setLayoutX(350);
-        loginMenuAnchorPane.setDisable(true);
-        loginMenuAnchorPane.setOpacity(0);
-        registerMenuAnchorPane.setDisable(false);
-        registerMenuAnchorPane.setOpacity(1);
+    @FXML
+    private void initialize(){
+        passwordLoginTextField.setLayoutX(55);
+        passwordLoginTextField.setLayoutY(164);
+        passwordLoginTextField.setPrefWidth(passwordRegisterPasswordField.getPrefWidth());
+        passwordLoginTextField.setFont(passwordLoginPasswordField.getFont());
+        //passwordLoginTextField.setStyle("-fx-text-fill: green;");
+        passwordLoginTextField.setStyle(passwordLoginPasswordField.getStyle()+" -fx-text-fill: #00ddff;");
     }
 
     public void loginButtonClicked(ActionEvent actionEvent) {
     }
 
+    public void registerButtonClicked(ActionEvent actionEvent) {
+    }
+
     public void forgotPasswordClicked(MouseEvent mouseEvent) {
     }
 
-    public void registerButtonClicked(ActionEvent actionEvent) {
+    public void loginMenuButtonClicked(ActionEvent actionEvent) {
+        menuChange(actionEvent, registerMenuAnchorPane,loginMenuAnchorPane,registerMenuButton,loginMenuButton);
+    }
+
+    public void registerMenuButtonClicked(ActionEvent actionEvent) {
+        menuChange(actionEvent, loginMenuAnchorPane,registerMenuAnchorPane,loginMenuButton,registerMenuButton);
+    }
+
+    private void menuChange(ActionEvent actionEvent, AnchorPane p1, AnchorPane p2, Button b1, Button b2){
+        b1.setDisable(false);
+        b2.setDisable(true);
+        p1.setDisable(true);
+        p1.setVisible(false);
+        p2.setDisable(false);
+        p2.setVisible(true);
+        menuLine.setLayoutX(menuLine.getLayoutX()==350?100:350);
+
+        resetFields(actionEvent);
+        PrimaryController.fadeTransition(p2);
+    }
+
+    private void resetFields(ActionEvent actionEvent) {
+        usernameLoginTextField.setText("");
+        passwordLoginPasswordField.setText("");
+        passwordLoginTextField.setText("");
+        showPasswordCheckBox.setSelected(false);
+        showPasswordCheckBoxClicked(actionEvent);
+
+        usernameRegisterTextField.setText("");
+        passwordRegisterPasswordField.setText("");
+        emailRegisterTextField.setText("");
+        keyRegisterTextField.setText("");
+    }
+
+    public void showPasswordCheckBoxClicked(ActionEvent actionEvent) {
+        if(showPasswordCheckBox.isSelected()){
+            loginMenuAnchorPane.getChildren().add(passwordLoginTextField);
+            passwordLoginTextField.setText(passwordLoginPasswordField.getText());
+            passwordLoginPasswordField.setDisable(true);
+            passwordLoginPasswordField.setVisible(false);
+        }
+        else{
+            loginMenuAnchorPane.getChildren().remove(passwordLoginTextField);
+            passwordLoginPasswordField.setDisable(false);
+            passwordLoginPasswordField.setVisible(true);
+        }
     }
 }
