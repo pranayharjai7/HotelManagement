@@ -5,7 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Font;
 
 public class LoginController {
     public Button loginMenuButton;
@@ -43,6 +47,21 @@ public class LoginController {
     }
 
     public void forgotPasswordClicked(MouseEvent mouseEvent) {
+        HBox hBox = new HBox();
+        Label label = new Label("Enter Email ID:    ");
+        label.setFont(new Font(18));
+        TextField textField = new TextField();
+        textField.setPromptText("Enter your Email here");
+        textField.setPrefWidth(200);
+        hBox.getChildren().addAll(label, textField);
+
+        Alert forgotPassword = new Alert(Alert.AlertType.INFORMATION);
+        forgotPassword.setTitle("Forgot Password");
+        forgotPassword.setHeaderText("");
+        forgotPassword.setGraphic(hBox);
+        forgotPassword.showAndWait().ifPresent(buttonType -> {
+            System.out.println(textField.getText());
+        });
     }
 
     public void loginMenuButtonClicked(ActionEvent actionEvent) {

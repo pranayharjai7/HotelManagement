@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="Login.fxml for Login and Register created">
+    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="Login and Register optimized">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/PrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/Login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654289705858</updated>
       <workItem from="1654289708482" duration="10474000" />
-      <workItem from="1654460048314" duration="24697000" />
+      <workItem from="1654460048314" duration="27983000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel Management Project Initiated">
       <created>1654290549853</created>
@@ -178,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654523609636</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Login and Register optimized">
+      <created>1654545999192</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654545999192</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +200,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HotelManagement-1.2" />
+                        <option value="HotelManagement-1.2.2" />
                       </list>
                     </value>
                   </entry>
@@ -220,6 +225,7 @@
     <MESSAGE value="JavaFX controls and fxml dependencies added" />
     <MESSAGE value="Version changed from 1.2 to 1.2.2" />
     <MESSAGE value="Login.fxml for Login and Register created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login.fxml for Login and Register created" />
+    <MESSAGE value="Login and Register optimized" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login and Register optimized" />
   </component>
 </project>
