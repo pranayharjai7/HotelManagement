@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="Version changed from 1.2.2 to 1.2.3">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Models/UserData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Models/UserDataManager.java" afterDir="false" />
+    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="UserData table added, UserDataManager created">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Exceptions/EmptyFieldException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Exceptions/ShortPasswordException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Exceptions/UserDataAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Exceptions/WrongKeyException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userdata_db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/userdata_db.mv.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +47,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -73,6 +77,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.pranayharjai.hotelmanagement.Exceptions" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Pranay\Projects\IdeaProjects\HotelManagement\src\main\resources\Images" />
       <recent name="C:\Pranay\Projects\IdeaProjects\HotelManagement" />
@@ -112,7 +119,8 @@
       <workItem from="1654460048314" duration="27983000" />
       <workItem from="1655497187597" duration="1500000" />
       <workItem from="1655560398254" duration="59000" />
-      <workItem from="1655560473087" duration="3658000" />
+      <workItem from="1655560473087" duration="8323000" />
+      <workItem from="1655592985478" duration="949000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel Management Project Initiated">
       <created>1654290549853</created>
@@ -198,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655561288549</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="UserData table added, UserDataManager created">
+      <created>1655564511882</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655564511882</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +257,7 @@
     <MESSAGE value="Login.fxml for Login and Register created" />
     <MESSAGE value="Login and Register optimized" />
     <MESSAGE value="Version changed from 1.2.2 to 1.2.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version changed from 1.2.2 to 1.2.3" />
+    <MESSAGE value="UserData table added, UserDataManager created" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserData table added, UserDataManager created" />
   </component>
 </project>

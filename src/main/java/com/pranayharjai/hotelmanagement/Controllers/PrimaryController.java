@@ -5,7 +5,6 @@ import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
-
 import java.io.IOException;
 
 public class PrimaryController {

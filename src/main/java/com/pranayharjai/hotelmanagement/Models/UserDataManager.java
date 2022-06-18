@@ -1,7 +1,5 @@
 package com.pranayharjai.hotelmanagement.Models;
 
-import org.h2.engine.User;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
