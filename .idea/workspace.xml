@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="Forgot Password added">
+    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="Version changed from 1.2.2 to 1.2.3">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Models/UserData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Models/UserDataManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +34,7 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
         <entry key="com.haulmont.jpb.jpaPalette" value="true" />
         <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
@@ -39,7 +43,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
   </component>
@@ -92,6 +96,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -107,7 +112,7 @@
       <workItem from="1654460048314" duration="27983000" />
       <workItem from="1655497187597" duration="1500000" />
       <workItem from="1655560398254" duration="59000" />
-      <workItem from="1655560473087" duration="456000" />
+      <workItem from="1655560473087" duration="3658000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel Management Project Initiated">
       <created>1654290549853</created>
@@ -186,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654545999192</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Version changed from 1.2.2 to 1.2.3">
+      <created>1655561288549</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1655561288549</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +215,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HotelManagement-1.2.2" />
+                        <option value="HotelManagement-1.2.3" />
                       </list>
                     </value>
                   </entry>
@@ -229,6 +241,7 @@
     <MESSAGE value="Version changed from 1.2 to 1.2.2" />
     <MESSAGE value="Login.fxml for Login and Register created" />
     <MESSAGE value="Login and Register optimized" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login and Register optimized" />
+    <MESSAGE value="Version changed from 1.2.2 to 1.2.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version changed from 1.2.2 to 1.2.3" />
   </component>
 </project>
