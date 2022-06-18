@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="UserData table added, UserDataManager created">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Exceptions/EmptyFieldException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Exceptions/ShortPasswordException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Exceptions/UserDataAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Exceptions/WrongKeyException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userdata_db.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/userdata_db.mv.db" afterDir="false" />
-    </list>
+    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="User registration enabled in database." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +111,7 @@
       <workItem from="1655497187597" duration="1500000" />
       <workItem from="1655560398254" duration="59000" />
       <workItem from="1655560473087" duration="8323000" />
-      <workItem from="1655592985478" duration="949000" />
+      <workItem from="1655592985478" duration="1275000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel Management Project Initiated">
       <created>1654290549853</created>
@@ -213,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655564511882</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="User registration enabled in database.">
+      <created>1655594247077</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655594247077</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +256,7 @@
     <MESSAGE value="Login and Register optimized" />
     <MESSAGE value="Version changed from 1.2.2 to 1.2.3" />
     <MESSAGE value="UserData table added, UserDataManager created" />
-    <option name="LAST_COMMIT_MESSAGE" value="UserData table added, UserDataManager created" />
+    <MESSAGE value="User registration enabled in database." />
+    <option name="LAST_COMMIT_MESSAGE" value="User registration enabled in database." />
   </component>
 </project>
