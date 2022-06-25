@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="User registration enabled in database." />
+    <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="UserDataDAO Interface added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Models/UserDataDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Models/UserDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Models/UserDataManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +19,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -95,6 +100,7 @@
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -111,7 +117,9 @@
       <workItem from="1655497187597" duration="1500000" />
       <workItem from="1655560398254" duration="59000" />
       <workItem from="1655560473087" duration="8323000" />
-      <workItem from="1655592985478" duration="1275000" />
+      <workItem from="1655592985478" duration="3692000" />
+      <workItem from="1655847295644" duration="753000" />
+      <workItem from="1656168984122" duration="595000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel Management Project Initiated">
       <created>1654290549853</created>
@@ -211,7 +219,28 @@
       <option name="project" value="LOCAL" />
       <updated>1655594247077</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Version changed from 1.2.3 to 1.2.4">
+      <created>1655594472902</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655594472902</updated>
+    </task>
+    <task id="LOCAL-00016" summary="UserDataDAO Interface added">
+      <created>1655847360565</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1655847360565</updated>
+    </task>
+    <task id="LOCAL-00017" summary="UserDataDAO Interface added">
+      <created>1655847405309</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655847405309</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,7 +257,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HotelManagement-1.2.3" />
+                        <option value="HotelManagement-1.2.4" />
                       </list>
                     </value>
                   </entry>
@@ -257,6 +286,8 @@
     <MESSAGE value="Version changed from 1.2.2 to 1.2.3" />
     <MESSAGE value="UserData table added, UserDataManager created" />
     <MESSAGE value="User registration enabled in database." />
-    <option name="LAST_COMMIT_MESSAGE" value="User registration enabled in database." />
+    <MESSAGE value="Version changed from 1.2.3 to 1.2.4" />
+    <MESSAGE value="UserDataDAO Interface added" />
+    <option name="LAST_COMMIT_MESSAGE" value="UserDataDAO Interface added" />
   </component>
 </project>
