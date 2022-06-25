@@ -4,6 +4,7 @@ import com.pranayharjai.hotelmanagement.Exceptions.EmptyFieldException;
 import com.pranayharjai.hotelmanagement.Exceptions.ShortPasswordException;
 import com.pranayharjai.hotelmanagement.Exceptions.UserDataAlreadyExistsException;
 import com.pranayharjai.hotelmanagement.Exceptions.WrongKeyException;
+import com.pranayharjai.hotelmanagement.Main;
 import com.pranayharjai.hotelmanagement.Models.UserData;
 import com.pranayharjai.hotelmanagement.Models.UserDataManager;
 import javafx.event.ActionEvent;
@@ -14,6 +15,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
+
+import java.io.IOException;
 import java.util.List;
 
 
@@ -46,7 +49,8 @@ public class LoginController {
         passwordLoginTextField.setStyle(passwordLoginPasswordField.getStyle()+" -fx-text-fill: #00ddff;");
     }
 
-    public void loginButtonClicked(ActionEvent actionEvent) {
+    public void loginButtonClicked(ActionEvent actionEvent) throws IOException {
+        Main.setScene("HotelManagementMenu.fxml");
     }
 
     public void registerButtonClicked(ActionEvent actionEvent) {

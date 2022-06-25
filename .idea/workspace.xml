@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="017268d5-20ba-40e0-b301-223aefa00ead" name="Changes" comment="UserDataDAO Interface added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Models/UserDataDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/HotelManagementMenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/CheckOut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/PetManagement.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/RoomSearch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/bill.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/checkIn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/HotelManagementMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Models/UserDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Models/UserDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pranayharjai/hotelmanagement/Controllers/LoginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +23,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -119,7 +125,7 @@
       <workItem from="1655560473087" duration="8323000" />
       <workItem from="1655592985478" duration="3692000" />
       <workItem from="1655847295644" duration="753000" />
-      <workItem from="1656168984122" duration="595000" />
+      <workItem from="1656168984122" duration="10173000" />
     </task>
     <task id="LOCAL-00001" summary="Hotel Management Project Initiated">
       <created>1654290549853</created>
@@ -240,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655847405309</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="UserDataDAO Interface added">
+      <created>1656169930814</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1656169930814</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
