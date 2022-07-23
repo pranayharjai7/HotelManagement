@@ -1,9 +1,6 @@
 package com.pranayharjai.hotelmanagement.Controllers;
 
-import com.pranayharjai.hotelmanagement.Exceptions.EmptyFieldException;
-import com.pranayharjai.hotelmanagement.Exceptions.ShortPasswordException;
-import com.pranayharjai.hotelmanagement.Exceptions.UserDataAlreadyExistsException;
-import com.pranayharjai.hotelmanagement.Exceptions.WrongKeyException;
+import com.pranayharjai.hotelmanagement.Exceptions.*;
 import com.pranayharjai.hotelmanagement.Main;
 import com.pranayharjai.hotelmanagement.Models.UserData;
 import com.pranayharjai.hotelmanagement.Models.UserDataManager;
@@ -63,10 +60,7 @@ public class LoginController {
             userData.setPassword(passwordRegisterPasswordField.getText());
             userDataManager.setUserData(userData);
             userDataManager.close();
-            confirm.setTitle("Registration");
-            confirm.setHeaderText("Registration Successful!");
-            confirm.setContentText("The user was registered successfully!");
-            confirm.showAndWait();
+            AllAlerts.confirmAlert("Registration","Registration Successful!","The user was registered successfully!");
             loginMenuButtonClicked(actionEvent);
         } catch (EmptyFieldException e) {
             e.errorAlertForEmptyField();
