@@ -1,9 +1,7 @@
 package com.pranayharjai.hotelmanagement.Controllers;
 
-import com.pranayharjai.hotelmanagement.Exceptions.EmptyFieldException;
-import com.pranayharjai.hotelmanagement.Exceptions.ShortPasswordException;
-import com.pranayharjai.hotelmanagement.Exceptions.UserDataAlreadyExistsException;
-import com.pranayharjai.hotelmanagement.Exceptions.WrongKeyException;
+import com.pranayharjai.hotelmanagement.Exceptions.*;
+import com.pranayharjai.hotelmanagement.Main;
 import com.pranayharjai.hotelmanagement.Models.UserData;
 import com.pranayharjai.hotelmanagement.Models.UserDataManager;
 import javafx.event.ActionEvent;
@@ -14,6 +12,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
+
+import java.io.IOException;
 import java.util.List;
 
 
@@ -34,19 +34,44 @@ public class LoginController {
     private TextField passwordLoginTextField = new TextField();
 
     private UserDataManager userDataManager;
-    private Alert error = new Alert(Alert.AlertType.ERROR);
-    private Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
 
     @FXML
-    private void initialize(){
+    private void initialize() {
         passwordLoginTextField.setLayoutX(55);
         passwordLoginTextField.setLayoutY(164);
         passwordLoginTextField.setPrefWidth(passwordRegisterPasswordField.getPrefWidth());
         passwordLoginTextField.setFont(passwordLoginPasswordField.getFont());
-        passwordLoginTextField.setStyle(passwordLoginPasswordField.getStyle()+" -fx-text-fill: #00ddff;");
+        passwordLoginTextField.setStyle(passwordLoginPasswordField.getStyle() + " -fx-text-fill: #00ddff;");
     }
 
-    public void loginButtonClicked(ActionEvent actionEvent) {
+    public void loginButtonClicked(ActionEvent actionEvent) throws IOException {
+        try {
+            userDataAuthentication();
+            Main.setScene("HotelManagementMenu.fxml");
+        } catch (EmptyFieldException e) {
+            e.errorAlertForEmptyField();
+        } catch (UserDataAuthenticationFailedException e) {
+            e.errorAlertForUserDataAuthenticationFailed();
+        }
+
+    }
+
+    private void userDataAuthentication() throws EmptyFieldException, UserDataAuthenticationFailedException {
+        if (showPasswordCheckBox.isSelected()) {
+            passwordLoginPasswordField.setText(passwordLoginTextField.getText());
+        }
+        if (usernameLoginTextField.getText().isEmpty() || passwordLoginPasswordField.getText().isEmpty()) {
+            throw new EmptyFieldException();
+        }
+        userDataManager = new UserDataManager();
+        List<UserData> userDataList = userDataManager.readAllUserData();
+        for (UserData userData : userDataList) {
+            if (usernameLoginTextField.getText().equals(userData.getUsername()) && passwordLoginPasswordField.getText().equals(userData.getPassword())) {
+                return;
+            }
+        }
+
+        throw new UserDataAuthenticationFailedException();
     }
 
     public void registerButtonClicked(ActionEvent actionEvent) {
@@ -59,31 +84,16 @@ public class LoginController {
             userData.setPassword(passwordRegisterPasswordField.getText());
             userDataManager.setUserData(userData);
             userDataManager.close();
-            confirm.setTitle("Registration");
-            confirm.setHeaderText("Registration Successful!");
-            confirm.setContentText("The user was registered successfully!");
-            confirm.showAndWait();
+            AllAlerts.confirmAlert("Registration", "Registration Successful!", "The user was registered successfully!");
             loginMenuButtonClicked(actionEvent);
         } catch (EmptyFieldException e) {
-            error.setTitle("EmptyFieldException");
-            error.setHeaderText("Empty Field Exception caught!");
-            error.setContentText("Fields cannot be left empty!\nPlease try Again.");
-            error.showAndWait();
+            e.errorAlertForEmptyField();
         } catch (UserDataAlreadyExistsException e) {
-            error.setTitle("UserDataAlreadyExistsException");
-            error.setHeaderText("UserData Already Exists Exception caught!");
-            error.setContentText("The entered user already exists! \nPlease Enter a new user or try logging in.");
-            error.showAndWait();
+            e.errorAlertForUserDataAlreadyExists();
         } catch (ShortPasswordException e) {
-            error.setTitle("ShortPasswordException");
-            error.setHeaderText("Short Password Exception caught!");
-            error.setContentText("Password should be more than 6 characters long!\nPlease try again.");
-            error.showAndWait();
+            e.errorAlertForShortPassword();
         } catch (WrongKeyException e) {
-            error.setTitle("WrongKeyException");
-            error.setHeaderText("Wrong Key Exception caught!");
-            error.setContentText("The key you entered is incorrect!\nPlease try again.");
-            error.showAndWait();
+            e.errorAlertForWrongKey();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -91,15 +101,15 @@ public class LoginController {
     }
 
     private void registerUserValidate() throws EmptyFieldException, UserDataAlreadyExistsException, ShortPasswordException, WrongKeyException {
-        if(usernameRegisterTextField.getText().isEmpty() || emailRegisterTextField.getText().isEmpty()
-                || passwordRegisterPasswordField.getText().isEmpty() || keyRegisterTextField.getText().isEmpty()){
+        if (usernameRegisterTextField.getText().isEmpty() || emailRegisterTextField.getText().isEmpty()
+                || passwordRegisterPasswordField.getText().isEmpty() || keyRegisterTextField.getText().isEmpty()) {
             throw new EmptyFieldException();
         }
 
         userDataManager = new UserDataManager();
         List<UserData> userDataList = userDataManager.readAllUserData();
-        for (UserData userData: userDataList) {
-            if(userData.getUsername().equals(usernameRegisterTextField.getText()) || userData.getEmail().equals(emailRegisterTextField.getText())){
+        for (UserData userData : userDataList) {
+            if (userData.getUsername().equals(usernameRegisterTextField.getText()) || userData.getEmail().equals(emailRegisterTextField.getText())) {
                 throw new UserDataAlreadyExistsException();
             }
         }
@@ -110,11 +120,11 @@ public class LoginController {
             throw new RuntimeException(e);
         }
 
-        if(passwordRegisterPasswordField.getText().length()<6){
+        if (passwordRegisterPasswordField.getText().length() < 6) {
             throw new ShortPasswordException();
         }
 
-        if(!keyRegisterTextField.getText().equals("lol")){
+        if (!keyRegisterTextField.getText().equals("lol")) {
             throw new WrongKeyException();
         }
     }
@@ -138,21 +148,21 @@ public class LoginController {
     }
 
     public void loginMenuButtonClicked(ActionEvent actionEvent) {
-        menuChange(actionEvent, registerMenuAnchorPane,loginMenuAnchorPane,registerMenuButton,loginMenuButton);
+        menuChange(actionEvent, registerMenuAnchorPane, loginMenuAnchorPane, registerMenuButton, loginMenuButton);
     }
 
     public void registerMenuButtonClicked(ActionEvent actionEvent) {
-        menuChange(actionEvent, loginMenuAnchorPane,registerMenuAnchorPane,loginMenuButton,registerMenuButton);
+        menuChange(actionEvent, loginMenuAnchorPane, registerMenuAnchorPane, loginMenuButton, registerMenuButton);
     }
 
-    private void menuChange(ActionEvent actionEvent, AnchorPane p1, AnchorPane p2, Button b1, Button b2){
+    private void menuChange(ActionEvent actionEvent, AnchorPane p1, AnchorPane p2, Button b1, Button b2) {
         b1.setDisable(false);
         b2.setDisable(true);
         p1.setDisable(true);
         p1.setVisible(false);
         p2.setDisable(false);
         p2.setVisible(true);
-        menuLine.setLayoutX(menuLine.getLayoutX()==350?100:350);
+        menuLine.setLayoutX(menuLine.getLayoutX() == 350 ? 100 : 350);
 
         resetFields(actionEvent);
         PrimaryController.fadeTransition(p2);
@@ -172,13 +182,12 @@ public class LoginController {
     }
 
     public void showPasswordCheckBoxClicked(ActionEvent actionEvent) {
-        if(showPasswordCheckBox.isSelected()){
+        if (showPasswordCheckBox.isSelected()) {
             loginMenuAnchorPane.getChildren().add(passwordLoginTextField);
             passwordLoginTextField.setText(passwordLoginPasswordField.getText());
             passwordLoginPasswordField.setDisable(true);
             passwordLoginPasswordField.setVisible(false);
-        }
-        else{
+        } else {
             loginMenuAnchorPane.getChildren().remove(passwordLoginTextField);
             passwordLoginPasswordField.setDisable(false);
             passwordLoginPasswordField.setVisible(true);
