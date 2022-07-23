@@ -103,7 +103,7 @@ public class HotelManagementMenuController {
         imageView.setFitWidth(imageView.getFitWidth() + 50);
         imageView.setPreserveRatio(false);
         label.setPrefWidth(label.getPrefWidth() + 50);
-        label.setPrefHeight(label.getPrefHeight()+25);
+        label.setPrefHeight(label.getPrefHeight() + 25);
         label.setLayoutY(label.getLayoutY() - 25);
     }
 
@@ -113,7 +113,7 @@ public class HotelManagementMenuController {
         imageView.setFitWidth(imageView.getFitWidth() - 50);
         imageView.setPreserveRatio(false);
         label.setPrefWidth(label.getPrefWidth() - 50);
-        label.setPrefHeight(label.getPrefHeight()-25);
+        label.setPrefHeight(label.getPrefHeight() - 25);
         label.setLayoutY(label.getLayoutY() + 25);
     }
 

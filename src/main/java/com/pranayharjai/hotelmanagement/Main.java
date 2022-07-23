@@ -9,10 +9,12 @@ import org.h2.tools.Server;
 
 import java.io.IOException;
 import java.sql.SQLException;
+
 public class Main extends Application {
 
     private static final Server server = new Server();
     private static Scene scene;
+
     public static void main(String[] args) throws SQLException {
 
         startDatabase();
@@ -36,13 +38,14 @@ public class Main extends Application {
     }
 
     private static Parent loadFxml(String fxml) throws IOException {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/fxml/"+fxml));
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("/fxml/" + fxml));
         return loader.load();
     }
 
 
     /**
      * Starting the H2 database using runtool.
+     *
      * @throws SQLException: Database Exception
      */
     public static void startDatabase() throws SQLException {
