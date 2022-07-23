@@ -13,13 +13,9 @@
 
 
 <AnchorPane prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pranayharjai.hotelmanagement.Controllers.PrimaryController">
-   <children>
       <AnchorPane prefHeight="650.0" prefWidth="850.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
             <ImageView fitHeight="650.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
-               <image>
                   <Image url="@../Images/primary.jpg" />
-               </image>
             </ImageView>
             <Label layoutX="100.0" layoutY="76.0" text="Hotel Management">
                <font>
@@ -29,7 +25,7 @@
                   <DropShadow />
                </effect>
                <textFill>
-                  <LinearGradient endX="1.0" endY="0.8750000040639531" startX="1.0" startY="0.37878787878787884">
+                  <LinearGradient endY="0.8750000040639531" startX="1.0" startY="0.37878787878787884">
                      <stops>
                         <Stop>
                            <color>
@@ -50,7 +46,5 @@
                   <Font name="Lucida Handwriting Italic" size="36.0" />
                </font>
             </Button>
-         </children>
       </AnchorPane>
-   </children>
 </AnchorPane>
