@@ -69,25 +69,13 @@ public class LoginController {
             confirm.showAndWait();
             loginMenuButtonClicked(actionEvent);
         } catch (EmptyFieldException e) {
-            error.setTitle("EmptyFieldException");
-            error.setHeaderText("Empty Field Exception caught!");
-            error.setContentText("Fields cannot be left empty!\nPlease try Again.");
-            error.showAndWait();
+            e.errorAlertForEmptyField();
         } catch (UserDataAlreadyExistsException e) {
-            error.setTitle("UserDataAlreadyExistsException");
-            error.setHeaderText("UserData Already Exists Exception caught!");
-            error.setContentText("The entered user already exists! \nPlease Enter a new user or try logging in.");
-            error.showAndWait();
+            e.errorAlertForUserDataAlreadyExists();
         } catch (ShortPasswordException e) {
-            error.setTitle("ShortPasswordException");
-            error.setHeaderText("Short Password Exception caught!");
-            error.setContentText("Password should be more than 6 characters long!\nPlease try again.");
-            error.showAndWait();
+            e.errorAlertForShortPassword();
         } catch (WrongKeyException e) {
-            error.setTitle("WrongKeyException");
-            error.setHeaderText("Wrong Key Exception caught!");
-            error.setContentText("The key you entered is incorrect!\nPlease try again.");
-            error.showAndWait();
+            e.errorAlertForWrongKey();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
