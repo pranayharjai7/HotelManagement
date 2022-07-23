@@ -45,7 +45,33 @@ public class LoginController {
     }
 
     public void loginButtonClicked(ActionEvent actionEvent) throws IOException {
-        Main.setScene("HotelManagementMenu.fxml");
+        try {
+            userDataAuthentication();
+            Main.setScene("HotelManagementMenu.fxml");
+        } catch (EmptyFieldException e) {
+            e.errorAlertForEmptyField();
+        } catch (UserDataAuthenticationFailedException e) {
+            e.errorAlertForUserDataAuthenticationFailed();
+        }
+
+    }
+
+    private void userDataAuthentication() throws EmptyFieldException, UserDataAuthenticationFailedException {
+        if (showPasswordCheckBox.isSelected()) {
+            passwordLoginPasswordField.setText(passwordLoginTextField.getText());
+        }
+        if (usernameLoginTextField.getText().isEmpty() || passwordLoginPasswordField.getText().isEmpty()) {
+            throw new EmptyFieldException();
+        }
+        userDataManager = new UserDataManager();
+        List<UserData> userDataList = userDataManager.readAllUserData();
+        for (UserData userData : userDataList) {
+            if (usernameLoginTextField.getText().equals(userData.getUsername()) && passwordLoginPasswordField.getText().equals(userData.getPassword())) {
+                return;
+            }
+        }
+
+        throw new UserDataAuthenticationFailedException();
     }
 
     public void registerButtonClicked(ActionEvent actionEvent) {
