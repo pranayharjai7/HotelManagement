@@ -13,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class RoomSearchController {
 
@@ -101,30 +102,103 @@ public class RoomSearchController {
 
 
     public void acMenuItemClicked(ActionEvent actionEvent) {
+        roomSearchTableView.getItems().clear();
+
+        List<RoomData> roomDataList = roomDataManager.readAllRoomData();
+        roomDataList = roomDataList.stream().filter(roomData -> roomData.getTypeOfRoom().equals("AC"))
+                .collect(Collectors.toList());
+
+        roomSearchTableView.getItems().addAll(roomDataList);
     }
 
     public void nonAcMenuItemClicked(ActionEvent actionEvent) {
+        roomSearchTableView.getItems().clear();
+
+        List<RoomData> roomDataList = roomDataManager.readAllRoomData();
+        roomDataList = roomDataList.stream().filter(roomData -> roomData.getTypeOfRoom().equals("NON-AC"))
+                .collect(Collectors.toList());
+
+        roomSearchTableView.getItems().addAll(roomDataList);
     }
 
     public void oneBedMenuItemClicked(ActionEvent actionEvent) {
+        roomSearchTableView.getItems().clear();
+
+        List<RoomData> roomDataList = roomDataManager.readAllRoomData();
+        roomDataList = roomDataList.stream().filter(roomData -> roomData.getNoOfBeds().equals("1"))
+                .collect(Collectors.toList());
+
+        roomSearchTableView.getItems().addAll(roomDataList);
     }
 
     public void twoBedMenuItemClicked(ActionEvent actionEvent) {
+        roomSearchTableView.getItems().clear();
+
+        List<RoomData> roomDataList = roomDataManager.readAllRoomData();
+        roomDataList = roomDataList.stream().filter(roomData -> roomData.getNoOfBeds().equals("2"))
+                .collect(Collectors.toList());
+
+        roomSearchTableView.getItems().addAll(roomDataList);
     }
 
     public void threeBedMenuItemClicked(ActionEvent actionEvent) {
+        roomSearchTableView.getItems().clear();
+
+        List<RoomData> roomDataList = roomDataManager.readAllRoomData();
+        roomDataList = roomDataList.stream().filter(roomData -> roomData.getNoOfBeds().equals("3"))
+                .collect(Collectors.toList());
+
+        roomSearchTableView.getItems().addAll(roomDataList);
     }
 
     public void noOfBedsMenuItemClicked(ActionEvent actionEvent) {
+        roomSearchTableView.getItems().clear();
+
+        List<RoomData> roomDataList = roomDataManager.readAllRoomData();
+        roomDataList = roomDataList.stream().sorted((o1, o2) -> o1.getNoOfBeds().compareTo(o2.getNoOfBeds())).collect(Collectors.toList());
+
+        roomSearchTableView.getItems().addAll(roomDataList);
     }
 
     public void priceMenuItemClicked(ActionEvent actionEvent) {
+        roomSearchTableView.getItems().clear();
+
+        List<RoomData> roomDataList = roomDataManager.readAllRoomData();
+        roomDataList = roomDataList.stream().sorted((o1, o2) -> o1.getPrice().compareTo(o2.getPrice())).collect(Collectors.toList());
+
+        roomSearchTableView.getItems().addAll(roomDataList);
     }
 
     public void clearFiltersButtonClicked(ActionEvent actionEvent) {
+        roomSearchTableView.getItems().clear();
+        List<RoomData> roomDataList = roomDataManager.readAllRoomData();
+        roomSearchTableView.getItems().addAll(roomDataList);
     }
 
     public void bookButtonClicked(ActionEvent actionEvent) {
+        for (int i = 0; i < 60; i++) {
+            if (roomSearchTableView.getSelectionModel().isSelected(i)) {
+                RoomData roomData = (RoomData) roomSearchTableView.getSelectionModel().getSelectedItem();
+                if (roomData.getAvailability().equals("AVAILABLE")) {
+                    bookRoom(actionEvent, roomData);
+                } else {
+                    unBookRoom(actionEvent, roomData);
+                }
+                break;
+            }
+        }
+    }
+
+    private void unBookRoom(ActionEvent actionEvent, RoomData roomData) {
+        roomData.setAvailability("AVAILABLE");
+        roomDataManager.updateRoomData(roomData);
+        clearFiltersButtonClicked(actionEvent);
+    }
+
+    private void bookRoom(ActionEvent actionEvent, RoomData roomData) {
+        roomData.setAvailability("BOOKED");
+        roomDataManager.updateRoomData(roomData);
+        clearFiltersButtonClicked(actionEvent);
     }
 
     public void backButtonClicked(ActionEvent actionEvent) throws IOException {
