@@ -1,14 +1,18 @@
 package com.pranayharjai.hotelmanagement.Controllers;
 
 import com.pranayharjai.hotelmanagement.Main;
+import com.pranayharjai.hotelmanagement.Models.RoomData;
+import com.pranayharjai.hotelmanagement.Models.RoomDataManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.util.List;
 
 public class RoomSearchController {
 
@@ -49,9 +53,50 @@ public class RoomSearchController {
     @FXML
     private MenuItem priceMenuItem;
 
-    @FXML
-    public void initialize(){
+    private RoomDataManager roomDataManager;
 
+    @FXML
+    public void initialize() {
+        linkRoomSearchTableViewColumns();
+
+        roomDataManager = new RoomDataManager();
+        List<RoomData> roomDataList = roomDataManager.readAllRoomData();
+
+        if (roomDataList.isEmpty()) {
+            addDataToRoomDataTable();
+            roomDataList = roomDataManager.readAllRoomData();
+        }
+
+        roomSearchTableView.getItems().addAll(roomDataList);
+    }
+
+    private void addDataToRoomDataTable() {
+        for (int i = 1; i <= 60; i++) {
+            RoomData roomData = null;
+            if (i <= 10) {
+                roomData = new RoomData("" + i, "NON-AC", "1", "10000", "AVAILABLE");
+            } else if (i <= 20) {
+                roomData = new RoomData("" + i, "NON-AC", "2", "15000", "AVAILABLE");
+            } else if (i <= 30) {
+                roomData = new RoomData("" + i, "NON-AC", "3", "20000", "AVAILABLE");
+            } else if (i <= 40) {
+                roomData = new RoomData("" + i, "AC", "1", "20000", "AVAILABLE");
+            } else if (i <= 50) {
+                roomData = new RoomData("" + i, "AC", "2", "25000", "AVAILABLE");
+            } else if (i <= 60) {
+                roomData = new RoomData("" + i, "AC", "3", "30000", "AVAILABLE");
+            }
+            roomDataManager.setRoomData(roomData);
+        }
+
+    }
+
+    private void linkRoomSearchTableViewColumns() {
+        roomNo.setCellValueFactory(new PropertyValueFactory<RoomData, String>("roomNo"));
+        typeOfRoom.setCellValueFactory(new PropertyValueFactory<RoomData, String>("typeOfRoom"));
+        noOfBeds.setCellValueFactory(new PropertyValueFactory<RoomData, String>("noOfBeds"));
+        price.setCellValueFactory(new PropertyValueFactory<RoomData, String>("price"));
+        availability.setCellValueFactory(new PropertyValueFactory<RoomData, String>("availability"));
     }
 
 
