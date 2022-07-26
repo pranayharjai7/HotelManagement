@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pranayharjai.hotelmanagement.Controllers.RoomSearchController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="850.0" pickOnBounds="true" preserveRatio="true">
@@ -18,7 +17,7 @@
             <Image url="@../Images/primary.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="roomSearchTableView" layoutX="231.0" layoutY="123.0" prefHeight="458.0" prefWidth="594.0">
+      <TableView fx:id="roomSearchTableView" layoutX="231.0" layoutY="123.0" onMouseClicked="#roomSearchTableVIewClicked" prefHeight="458.0" prefWidth="594.0">
         <columns>
           <TableColumn fx:id="roomNo" prefWidth="115.99993896484375" text="RoomNo" />
           <TableColumn fx:id="typeOfRoom" prefWidth="155.20001220703125" text="Type of Room" />
@@ -47,7 +46,7 @@
         </items>
       </MenuButton>
       <Button layoutX="17.0" layoutY="556.0" mnemonicParsing="false" onAction="#clearFiltersButtonClicked" text="Clear Filters" />
-      <Button layoutX="740.0" layoutY="595.0" mnemonicParsing="false" onAction="#bookButtonClicked" prefHeight="43.0" prefWidth="82.0" text="Book">
+      <Button fx:id="bookButton" layoutX="713.0" layoutY="595.0" mnemonicParsing="false" onAction="#bookButtonClicked" prefHeight="43.0" prefWidth="109.0" text="BOOK">
          <font>
             <Font size="20.0" />
          </font>

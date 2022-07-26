@@ -5,11 +5,9 @@ import com.pranayharjai.hotelmanagement.Models.RoomData;
 import com.pranayharjai.hotelmanagement.Models.RoomDataManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.List;
@@ -53,6 +51,9 @@ public class RoomSearchController {
     private MenuItem noOfBedsMenuItem;
     @FXML
     private MenuItem priceMenuItem;
+
+    @FXML
+    private Button bookButton;
 
     private RoomDataManager roomDataManager;
 
@@ -189,19 +190,36 @@ public class RoomSearchController {
         }
     }
 
+    private void bookRoom(ActionEvent actionEvent, RoomData roomData) {
+        roomData.setAvailability("BOOKED");
+        roomDataManager.updateRoomData(roomData);
+        clearFiltersButtonClicked(actionEvent);
+        //TODO: send room details to checkin
+    }
+
     private void unBookRoom(ActionEvent actionEvent, RoomData roomData) {
         roomData.setAvailability("AVAILABLE");
         roomDataManager.updateRoomData(roomData);
         clearFiltersButtonClicked(actionEvent);
     }
 
-    private void bookRoom(ActionEvent actionEvent, RoomData roomData) {
-        roomData.setAvailability("BOOKED");
-        roomDataManager.updateRoomData(roomData);
-        clearFiltersButtonClicked(actionEvent);
-    }
-
     public void backButtonClicked(ActionEvent actionEvent) throws IOException {
         Main.setScene("HotelManagementMenu.fxml");
+    }
+
+    public void roomSearchTableVIewClicked(MouseEvent mouseEvent) {
+        for (int i = 0; i < 60; i++) {
+            if (roomSearchTableView.getSelectionModel().isSelected(i)) {
+                RoomData roomData = (RoomData) roomSearchTableView.getSelectionModel().getSelectedItem();
+                if (roomData.getAvailability().equals("AVAILABLE")) {
+                    bookButton.setDisable(false);
+                    bookButton.setText("BOOK");
+                } else {
+                    bookButton.setDisable(true);
+                    bookButton.setText("BOOKED");
+                }
+                break;
+            }
+        }
     }
 }
