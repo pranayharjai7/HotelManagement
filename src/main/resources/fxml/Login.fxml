@@ -115,20 +115,6 @@
         <ImageView fitHeight="30.0" fitWidth="38.0" layoutX="14.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@../Images/username.png" />
         </ImageView>
-        <PasswordField fx:id="passwordRegisterPasswordField" layoutX="54.0" layoutY="219.0" prefWidth="225.0" promptText="Enter Password" style="-fx-background-color: transparent; -fx-text-fill: #00ddff;">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </PasswordField>
-        <Line endX="195.60003662109375" layoutX="112.0" layoutY="252.0" startX="-100.0" stroke="#00ddff" />
-        <ImageView fitHeight="30.0" fitWidth="38.0" layoutX="13.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../Images/password.png" />
-        </ImageView>
-        <Button layoutX="84.0" layoutY="345.0" mnemonicParsing="false" onAction="#registerButtonClicked" prefHeight="26.0" prefWidth="150.0" style="-fx-border-color: #00ddff; -fx-background-color: transparent;" text="REGISTER" textFill="#00ddff">
-            <font>
-                <Font name="System Bold" size="14.0" />
-            </font>
-        </Button>
         <TextField fx:id="emailRegisterTextField" layoutX="54.0" layoutY="164.0" prefHeight="26.0" prefWidth="225.0" promptText="Enter Email" style="-fx-background-color: transparent; -fx-text-fill: #00ddff;">
             <font>
                 <Font size="18.0" />
@@ -137,6 +123,15 @@
         <Line endX="195.60003662109375" layoutX="112.0" layoutY="197.0" startX="-100.0" stroke="#00ddff" />
         <ImageView fitHeight="30.0" fitWidth="38.0" layoutX="13.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../Images/email.png" />
+        </ImageView>
+        <PasswordField fx:id="passwordRegisterPasswordField" layoutX="54.0" layoutY="219.0" prefWidth="225.0" promptText="Enter Password" style="-fx-background-color: transparent; -fx-text-fill: #00ddff;">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </PasswordField>
+        <Line endX="195.60003662109375" layoutX="112.0" layoutY="252.0" startX="-100.0" stroke="#00ddff" />
+        <ImageView fitHeight="30.0" fitWidth="38.0" layoutX="13.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../Images/password.png" />
         </ImageView>
         <TextField fx:id="keyRegisterTextField" layoutX="54.0" layoutY="274.0" prefHeight="26.0" prefWidth="225.0" promptText="Enter Key" style="-fx-background-color: transparent; -fx-text-fill: #00ddff;">
             <font>
@@ -147,5 +142,10 @@
         <ImageView fitHeight="30.0" fitWidth="38.0" layoutX="13.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../Images/key.png" />
         </ImageView>
+        <Button layoutX="84.0" layoutY="345.0" mnemonicParsing="false" onAction="#registerButtonClicked" prefHeight="26.0" prefWidth="150.0" style="-fx-border-color: #00ddff; -fx-background-color: transparent;" text="REGISTER" textFill="#00ddff">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Button>
     </AnchorPane>
 </AnchorPane>

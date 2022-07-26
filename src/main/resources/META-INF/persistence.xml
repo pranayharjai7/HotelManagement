@@ -7,7 +7,7 @@
     <description>Hotel Management Hibernate Entity-Manager</description>
     <!-- Add persistent Classes -->
     <class>com.pranayharjai.hotelmanagement.Models.UserData</class>
-
+    <class>com.pranayharjai.hotelmanagement.Models.RoomData</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <!-- localhost:8082 -->

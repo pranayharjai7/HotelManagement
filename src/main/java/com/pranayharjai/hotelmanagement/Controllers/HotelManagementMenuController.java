@@ -42,7 +42,8 @@ public class HotelManagementMenuController {
     @FXML
     private Label billsLabel;
 
-    public void roomSearchClicked(MouseEvent mouseEvent) {
+    public void roomSearchClicked(MouseEvent mouseEvent) throws IOException {
+        Main.setScene("RoomSearch.fxml");
     }
 
     public void checkInClicked(MouseEvent mouseEvent) {
