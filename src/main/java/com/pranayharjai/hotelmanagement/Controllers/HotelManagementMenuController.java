@@ -46,7 +46,8 @@ public class HotelManagementMenuController {
         Main.setScene("RoomSearch.fxml");
     }
 
-    public void checkInClicked(MouseEvent mouseEvent) {
+    public void checkInClicked(MouseEvent mouseEvent) throws IOException {
+        Main.setScene("CheckIn.fxml");
     }
 
     public void checkOutClicked(MouseEvent mouseEvent) {

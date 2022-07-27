@@ -15,6 +15,8 @@ import java.util.stream.Collectors;
 
 public class RoomSearchController {
 
+    public static String SELECTED_ROOM = "";
+
     @FXML
     private TableView roomSearchTableView;
     @FXML
@@ -176,7 +178,7 @@ public class RoomSearchController {
         roomSearchTableView.getItems().addAll(roomDataList);
     }
 
-    public void bookButtonClicked(ActionEvent actionEvent) {
+    public void bookButtonClicked(ActionEvent actionEvent) throws IOException {
         for (int i = 0; i < 60; i++) {
             if (roomSearchTableView.getSelectionModel().isSelected(i)) {
                 RoomData roomData = (RoomData) roomSearchTableView.getSelectionModel().getSelectedItem();
@@ -190,11 +192,10 @@ public class RoomSearchController {
         }
     }
 
-    private void bookRoom(ActionEvent actionEvent, RoomData roomData) {
-        roomData.setAvailability("BOOKED");
-        roomDataManager.updateRoomData(roomData);
+    private void bookRoom(ActionEvent actionEvent, RoomData roomData) throws IOException {
         clearFiltersButtonClicked(actionEvent);
-        //TODO: send room details to checkin
+        SELECTED_ROOM = roomData.getRoomNo();
+        Main.setScene("CheckIn.fxml");
     }
 
     private void unBookRoom(ActionEvent actionEvent, RoomData roomData) {

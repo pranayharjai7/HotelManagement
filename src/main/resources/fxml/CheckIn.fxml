@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: #103040;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pranayharjai.hotelmanagement.Controllers.CheckInController">
+   <children>
+      <ImageView fitHeight="200.0" fitWidth="850.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Images/primary.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="280.0" layoutY="42.0" prefHeight="78.0" prefWidth="290.0" style="-fx-background-color: #103040;" text="CHECK - IN">
+         <font>
+            <Font name="Lucida Handwriting Italic" size="45.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+         <textFill>
+            <LinearGradient endY="0.7310606209617673" startX="1.0" startY="0.37878787878787884">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.8666666746139526" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2079293131828308" green="0.13279999792575836" blue="0.8299999833106995" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="87.0" layoutY="241.0" text="Name: " textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="439.0" layoutY="288.0" text="ID No.:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="87.0" layoutY="288.0" text="Type of Id:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="87.0" layoutY="345.0" text="No. of additional Members: " textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="87.0" layoutY="399.0" text="Pets?" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="399.0" text="Pet Tag: " textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="87.0" layoutY="464.0" text="Check-In Date: " textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="87.0" layoutY="509.0" text="Estimated days of stay:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="570.0" layoutY="464.0" text="Room: " textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="570.0" layoutY="509.0" text="Expected Price:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fullNameTextField" layoutX="180.0" layoutY="243.0" promptText="Enter full name" />
+      <MenuButton fx:id="typeOfIdMenuButton" layoutX="206.0" layoutY="291.0" mnemonicParsing="false">
+        <items>
+          <MenuItem fx:id="passportMenuItem" mnemonicParsing="false" onAction="#typeOfIdClicked" text="Passport" />
+          <MenuItem fx:id="residencePermitMenuItem" mnemonicParsing="false" onAction="#typeOfIdClicked" text="Residence Permit" />
+            <MenuItem fx:id="nicMenuItem" mnemonicParsing="false" onAction="#typeOfIdClicked" text="NIC" />
+        </items>
+      </MenuButton>
+      <Label fx:id="typeOfIdLabel" layoutX="255.0" layoutY="288.0" text="__" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idNoTextField" layoutX="514.0" layoutY="291.0" promptText="Enter ID" />
+      <MenuButton fx:id="noOfAdditionalMembersMenuButton" layoutX="347.0" layoutY="347.0" mnemonicParsing="false">
+         <items>
+            <MenuItem fx:id="zeroMenuItem" mnemonicParsing="false" onAction="#noOfAdditionalMembersClicked" text="0" />
+            <MenuItem fx:id="oneMenuItem" mnemonicParsing="false" onAction="#noOfAdditionalMembersClicked" text="1" />
+            <MenuItem fx:id="twoMenuItem" mnemonicParsing="false" onAction="#noOfAdditionalMembersClicked" text="2" />
+         </items>
+      </MenuButton>
+      <Label fx:id="noOfAdditionalMembersLabel" layoutX="403.0" layoutY="344.0" text="__" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="petsCheckBox" layoutX="163.0" layoutY="405.0" mnemonicParsing="false" onAction="#petsCheckBoxClicked" />
+      <TextField fx:id="petTagTextField" disable="true" layoutX="364.0" layoutY="402.0" promptText="Enter Pet Tag" />
+      <DatePicker fx:id="checkInDatePicker" layoutX="228.0" layoutY="467.0" promptText="Enter Check-In Date" />
+      <TextField fx:id="estimatedDaysOfStayTextField" layoutX="309.0" layoutY="512.0" promptText="Enter days of stay" />
+      <ChoiceBox fx:id="roomChoiceBox" layoutX="636.0" layoutY="466.0" prefWidth="150.0" />
+      <TextField fx:id="expectedPriceTextField" layoutX="712.0" layoutY="512.0" prefHeight="26.0" prefWidth="103.0" promptText="Price" />
+      <Button fx:id="checkInButton" layoutX="627.0" layoutY="589.0" mnemonicParsing="false" onAction="#checkInButtonClicked" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #00ddff;" text="CHECK IN" textFill="#00ddff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="31.0" prefWidth="93.0" style="-fx-background-color: transparent; -fx-border-color: #00ddff;" text="BACK" textFill="#00ddff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
