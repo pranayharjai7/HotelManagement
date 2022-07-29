@@ -1,5 +1,6 @@
 package com.pranayharjai.hotelmanagement.Controllers;
 
+import com.pranayharjai.hotelmanagement.Exceptions.AllAlerts;
 import com.pranayharjai.hotelmanagement.Exceptions.EmptyFieldException;
 import com.pranayharjai.hotelmanagement.Main;
 import com.pranayharjai.hotelmanagement.Models.RoomData;
@@ -11,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.io.IOException;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -52,7 +54,13 @@ public class CheckInController {
     @FXML
     private DatePicker checkInDatePicker;
     @FXML
+    private DatePicker checkOutDatePicker;
+    @FXML
+    private CheckBox calculateDaysOfStayCheckBox;
+    @FXML
     private TextField estimatedDaysOfStayTextField;
+    @FXML
+    public CheckBox calculateCheckOutDateCheckBox;
 
     @FXML
     private ChoiceBox roomChoiceBox;
@@ -119,6 +127,38 @@ public class CheckInController {
     }
 
     @FXML
+    private void calculateDaysOfStayCheckBoxClicked(ActionEvent actionEvent) {
+        try {
+            if (calculateDaysOfStayCheckBox.isSelected()) {
+                if (!(checkInDatePicker.getValue() == null) && !(checkOutDatePicker.getValue() == null)) {
+                    if (checkOutDatePicker.getValue().isAfter(checkInDatePicker.getValue())) {
+
+                        long difference = ChronoUnit.DAYS.between(checkInDatePicker.getValue(), checkOutDatePicker.getValue());
+                        estimatedDaysOfStayTextField.setText("" + difference);
+                        estimatedDaysOfStayTextField.setEditable(false);
+                    } else {
+                        AllAlerts.errorAlert("Wrong Date entered!", "Wrong Check-out Date entered!", "Please enter checkout date correctly");
+                        calculateDaysOfStayCheckBox.setSelected(false);
+                    }
+                } else {
+                    throw new EmptyFieldException();
+
+                }
+            } else {
+                estimatedDaysOfStayTextField.setEditable(true);
+            }
+        } catch (EmptyFieldException e) {
+            e.errorAlertForEmptyField();
+            calculateDaysOfStayCheckBox.setSelected(false);
+        }
+    }
+
+    @FXML
+    private void calculateCheckOutDateCheckBoxClicked(ActionEvent actionEvent) {
+        //TODO
+    }
+
+    @FXML
     private void checkInButtonClicked(ActionEvent actionEvent) throws EmptyFieldException {
         if (fullNameTextField.getText().isEmpty() || typeOfIdLabel.equals("__") || idNoTextField.getText().isEmpty()
                 || noOfAdditionalMembersLabel.getText().equals("__") || checkInDatePicker.getValue().toString().isEmpty()
@@ -132,7 +172,7 @@ public class CheckInController {
         String typeOfId = typeOfIdLabel.getText();
         String idNo = idNoTextField.getText();
         String additionalMembers = noOfAdditionalMembersLabel.getText();
-        String petTag = petTagTextField.getText().isEmpty()?"":petTagTextField.getText();
+        String petTag = petTagTextField.getText().isEmpty() ? "" : petTagTextField.getText();
         String checkInDate = checkInDatePicker.getValue().toString();
         String ETAdays = estimatedDaysOfStayTextField.getText();
         String roomNo = roomChoiceBox.getValue().toString();

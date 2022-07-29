@@ -83,7 +83,12 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="87.0" layoutY="509.0" text="Estimated days of stay:" textFill="WHITE">
+      <Label layoutX="70.0" layoutY="510.0" text="Check-Out Date: " textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="557.0" text="Estimated days of stay:" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
@@ -126,8 +131,11 @@
       </Label>
       <CheckBox fx:id="petsCheckBox" layoutX="163.0" layoutY="405.0" mnemonicParsing="false" onAction="#petsCheckBoxClicked" />
       <TextField fx:id="petTagTextField" disable="true" layoutX="364.0" layoutY="402.0" promptText="Enter Pet Tag" />
-      <DatePicker fx:id="checkInDatePicker" layoutX="228.0" layoutY="467.0" promptText="Enter Check-In Date" />
-      <TextField fx:id="estimatedDaysOfStayTextField" layoutX="309.0" layoutY="512.0" promptText="Enter days of stay" />
+      <DatePicker fx:id="checkInDatePicker" layoutX="227.0" layoutY="466.0" prefHeight="26.0" prefWidth="156.0" promptText="Enter Check-In Date" />
+      <DatePicker fx:id="checkOutDatePicker" layoutX="227.0" layoutY="512.0" prefHeight="26.0" prefWidth="156.0" promptText="Enter Check-out Date" />
+      <CheckBox fx:id="calculateDaysOfStayCheckBox" layoutX="401.0" layoutY="516.0" mnemonicParsing="false" onAction="#calculateDaysOfStayCheckBoxClicked" text="Calculate days of stay" textFill="WHITE" />
+      <TextField fx:id="estimatedDaysOfStayTextField" layoutX="227.0" layoutY="559.0" prefHeight="26.0" prefWidth="156.0" promptText="Enter days of stay" />
+      <CheckBox fx:id="calculateCheckOutDateCheckBox" layoutX="401.0" layoutY="563.0" mnemonicParsing="false" onAction="#calculateCheckOutDateCheckBoxClicked" text="Calculate Check-out date" textFill="WHITE" />
       <ChoiceBox fx:id="roomChoiceBox" layoutX="636.0" layoutY="466.0" prefWidth="150.0" />
       <TextField fx:id="expectedPriceTextField" layoutX="712.0" layoutY="512.0" prefHeight="26.0" prefWidth="103.0" promptText="Price" />
       <Button fx:id="checkInButton" layoutX="627.0" layoutY="589.0" mnemonicParsing="false" onAction="#checkInButtonClicked" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #00ddff;" text="CHECK IN" textFill="#00ddff">
