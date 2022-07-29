@@ -2,6 +2,7 @@ package com.pranayharjai.hotelmanagement.Controllers;
 
 import com.pranayharjai.hotelmanagement.Exceptions.AllAlerts;
 import com.pranayharjai.hotelmanagement.Exceptions.EmptyFieldException;
+import com.pranayharjai.hotelmanagement.Exceptions.WrongDataException;
 import com.pranayharjai.hotelmanagement.Main;
 import com.pranayharjai.hotelmanagement.Models.RoomData;
 import com.pranayharjai.hotelmanagement.Models.RoomDataManager;
@@ -130,19 +131,16 @@ public class CheckInController {
     private void calculateDaysOfStayCheckBoxClicked(ActionEvent actionEvent) {
         try {
             if (calculateDaysOfStayCheckBox.isSelected()) {
-                if (!(checkInDatePicker.getValue() == null) && !(checkOutDatePicker.getValue() == null)) {
+                if (checkInDatePicker.getValue() != null && checkOutDatePicker.getValue() != null) {
                     if (checkOutDatePicker.getValue().isAfter(checkInDatePicker.getValue())) {
-
                         long difference = ChronoUnit.DAYS.between(checkInDatePicker.getValue(), checkOutDatePicker.getValue());
                         estimatedDaysOfStayTextField.setText("" + difference);
                         estimatedDaysOfStayTextField.setEditable(false);
                     } else {
-                        AllAlerts.errorAlert("Wrong Date entered!", "Wrong Check-out Date entered!", "Please enter checkout date correctly");
-                        calculateDaysOfStayCheckBox.setSelected(false);
+                        throw new WrongDataException();
                     }
                 } else {
                     throw new EmptyFieldException();
-
                 }
             } else {
                 estimatedDaysOfStayTextField.setEditable(true);
@@ -150,12 +148,14 @@ public class CheckInController {
         } catch (EmptyFieldException e) {
             e.errorAlertForEmptyField("EmptyFieldException", "Error!", "Check-In date and Check-Out date should not be empty!");
             calculateDaysOfStayCheckBox.setSelected(false);
+        } catch (WrongDataException e) {
+            e.errorAlertForWrongData("Wrong Date entered!", "Wrong Check-out Date entered!", "Please enter checkout date correctly");
+            calculateDaysOfStayCheckBox.setSelected(false);
         }
     }
 
     @FXML
     private void calculateCheckOutDateCheckBoxClicked(ActionEvent actionEvent) {
-        //TODO
     }
 
     @FXML
