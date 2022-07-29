@@ -156,6 +156,31 @@ public class CheckInController {
 
     @FXML
     private void calculateCheckOutDateCheckBoxClicked(ActionEvent actionEvent) {
+        try {
+            if (calculateCheckOutDateCheckBox.isSelected()) {
+                if (checkInDatePicker.getValue() != null && !estimatedDaysOfStayTextField.getText().isEmpty()) {
+                    int daysOfStay = Integer.parseInt(estimatedDaysOfStayTextField.getText());
+                    if (daysOfStay < 0) {
+                        throw new WrongDataException();
+                    }
+                    checkOutDatePicker.setValue(checkInDatePicker.getValue().plusDays(daysOfStay));
+                    checkOutDatePicker.setEditable(false);
+                } else {
+                    throw new EmptyFieldException();
+                }
+            } else {
+                checkOutDatePicker.setEditable(true);
+            }
+        } catch (EmptyFieldException e) {
+            e.errorAlertForEmptyField("EmptyFieldException", "Error!", "Check-In date and Estimated Days of stay should not be empty!");
+            calculateCheckOutDateCheckBox.setSelected(false);
+        } catch (WrongDataException e) {
+            e.errorAlertForWrongData("WrongDataException", "Wrong Day Entered", "Please use positive integers only!");
+            calculateCheckOutDateCheckBox.setSelected(false);
+        } catch (NumberFormatException e) {
+            AllAlerts.errorAlert("NumberFormatException", "Wrong Day Entered!", "Please use numbers only!");
+            calculateCheckOutDateCheckBox.setSelected(false);
+        }
     }
 
     @FXML
