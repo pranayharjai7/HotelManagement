@@ -148,7 +148,7 @@ public class CheckInController {
                 estimatedDaysOfStayTextField.setEditable(true);
             }
         } catch (EmptyFieldException e) {
-            e.errorAlertForEmptyField();
+            e.errorAlertForEmptyField("EmptyFieldException", "Error!", "Check-In date and Check-Out date should not be empty!");
             calculateDaysOfStayCheckBox.setSelected(false);
         }
     }
