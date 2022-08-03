@@ -4,13 +4,13 @@ import com.pranayharjai.hotelmanagement.Exceptions.AllAlerts;
 import com.pranayharjai.hotelmanagement.Exceptions.EmptyFieldException;
 import com.pranayharjai.hotelmanagement.Exceptions.WrongDataException;
 import com.pranayharjai.hotelmanagement.Main;
-import com.pranayharjai.hotelmanagement.Models.RoomData;
-import com.pranayharjai.hotelmanagement.Models.RoomDataManager;
+import com.pranayharjai.hotelmanagement.Models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.time.temporal.ChronoUnit;
@@ -72,6 +72,8 @@ public class CheckInController {
     private Button checkInButton;
 
     private RoomDataManager roomDataManager;
+    private CheckInDataManager checkInDataManager;
+    private CustomerDataManager customerDataManager;
 
     @FXML
     private void initialize() {
@@ -184,34 +186,103 @@ public class CheckInController {
     }
 
     @FXML
-    private void checkInButtonClicked(ActionEvent actionEvent) throws EmptyFieldException {
-        if (fullNameTextField.getText().isEmpty() || typeOfIdLabel.equals("__") || idNoTextField.getText().isEmpty()
-                || noOfAdditionalMembersLabel.getText().equals("__") || checkInDatePicker.getValue().toString().isEmpty()
-                || estimatedDaysOfStayTextField.getText().isEmpty() || expectedPriceTextField.getText().isEmpty()
-                || roomChoiceBox.getValue().toString().isEmpty()) {
-            throw new EmptyFieldException();
+    private void expectedPriceTextFieldClicked(MouseEvent mouseEvent) {
+        double price = 0;
+        try {
+            if (roomChoiceBox.getValue() == null) {
+                throw new EmptyFieldException();
+            }
+
+            List<RoomData> roomDataList = roomDataManager.readAllRoomData()
+                    .stream()
+                    .filter(roomData -> roomData.getRoomNo().equals(roomChoiceBox.getValue().toString()))
+                    .toList();
+
+            price = Double.parseDouble(roomDataList.get(0).getPrice());
+
+            if (petsCheckBox.isSelected()) {
+                price += 2000;
+            }
+        } catch (EmptyFieldException e) {
+            e.errorAlertForEmptyField();
         }
 
+        expectedPriceTextField.setText("" + price);
+    }
 
-        String customerName = fullNameTextField.getText();
-        String typeOfId = typeOfIdLabel.getText();
-        String idNo = idNoTextField.getText();
-        String additionalMembers = noOfAdditionalMembersLabel.getText();
-        String petTag = petTagTextField.getText().isEmpty() ? "" : petTagTextField.getText();
-        String checkInDate = checkInDatePicker.getValue().toString();
-        String ETAdays = estimatedDaysOfStayTextField.getText();
-        String roomNo = roomChoiceBox.getValue().toString();
-        String price = expectedPriceTextField.getText();
+    @FXML
+    private void checkInButtonClicked(ActionEvent actionEvent) throws IOException {
 
-        System.out.println(customerName
-                + " " + typeOfId
-                + " " + idNo
-                + " " + additionalMembers
-                + " " + petTag
-                + " " + checkInDate
-                + " " + ETAdays
-                + " " + roomNo
-                + " " + price);
+        try {
+            if (fullNameTextField.getText().isEmpty() || typeOfIdLabel.getText().equals("__") || idNoTextField.getText().isEmpty()
+                    || noOfAdditionalMembersLabel.getText().equals("__") || checkInDatePicker.getValue() == null
+                    || estimatedDaysOfStayTextField.getText().isEmpty() || checkOutDatePicker.getValue() == null
+                    || roomChoiceBox.getValue() == null) {
+                throw new EmptyFieldException();
+            }
+
+            manageCheckInData();
+            manageCustomerData();
+            updateRoomStatus();
+
+            AllAlerts.confirmAlert("Check-In", "Check-In successful!", "You are now checked in!");
+            Main.setScene("HotelManagementMenu.fxml");
+        } catch (EmptyFieldException e) {
+            e.errorAlertForEmptyField();
+        }
+    }
+
+    private void manageCheckInData() {
+        CheckInData checkInData = new CheckInData();
+        checkInData.setName(fullNameTextField.getText());
+        checkInData.setTypeOfId(typeOfIdLabel.getText());
+        checkInData.setIdNumber(idNoTextField.getText());
+        checkInData.setNoOfAdditionalMembers(noOfAdditionalMembersLabel.getText());
+        checkInData.setPets("" + petsCheckBox.isSelected());
+        if (petsCheckBox.isSelected()) {
+            checkInData.setPetTag(petTagTextField.getText());
+        } else {
+            checkInData.setPetTag("NONE");
+        }
+        checkInData.setCheckInDate(checkInDatePicker.getValue().toString());
+        checkInData.setExpectedCheckOut(checkOutDatePicker.getValue().toString());
+        checkInData.setEstimatedTimeOfStay(estimatedDaysOfStayTextField.getText());
+        checkInData.setRoomNumber(roomChoiceBox.getValue().toString());
+        checkInDataManager = new CheckInDataManager();
+        checkInDataManager.setCheckInData(checkInData);
+    }
+
+    private void manageCustomerData() {
+        CustomerData customerData = new CustomerData();
+        customerData.setName(fullNameTextField.getText());
+        customerData.setTypeOfId(typeOfIdLabel.getText());
+        customerData.setIdNumber(idNoTextField.getText());
+        customerData.setNoOfAdditionalMembers(noOfAdditionalMembersLabel.getText());
+        customerData.setPets("" + petsCheckBox.isSelected());
+        if (petsCheckBox.isSelected()) {
+            customerData.setPetTag(petTagTextField.getText());
+        } else {
+            customerData.setPetTag("NONE");
+        }
+        customerData.setCheckInDate(checkInDatePicker.getValue().toString());
+        customerData.setCheckOutDate("NONE");
+        customerData.setRoomNumber(roomChoiceBox.getValue().toString());
+        customerData.setStatus("CHECKED-IN");
+        customerData.setBillId("NONE");
+        customerDataManager = new CustomerDataManager();
+        customerDataManager.setCustomerData(customerData);
+    }
+
+    private void updateRoomStatus() {
+        roomDataManager = new RoomDataManager();
+        RoomData roomData = roomDataManager.readAllRoomData()
+                .stream()
+                .filter(roomData1 -> roomData1.getRoomNo().equals(roomChoiceBox.getValue().toString()))
+                .toList()
+                .get(0);
+
+        roomData.setAvailability("BOOKED");
+        roomDataManager.updateRoomData(roomData);
     }
 
     @FXML

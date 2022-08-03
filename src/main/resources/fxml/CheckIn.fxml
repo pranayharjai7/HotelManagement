@@ -137,7 +137,7 @@
       <TextField fx:id="estimatedDaysOfStayTextField" layoutX="227.0" layoutY="559.0" prefHeight="26.0" prefWidth="156.0" promptText="Enter days of stay" />
       <CheckBox fx:id="calculateCheckOutDateCheckBox" layoutX="401.0" layoutY="563.0" mnemonicParsing="false" onAction="#calculateCheckOutDateCheckBoxClicked" text="Calculate Check-out date" textFill="WHITE" />
       <ChoiceBox fx:id="roomChoiceBox" layoutX="636.0" layoutY="466.0" prefWidth="150.0" />
-      <TextField fx:id="expectedPriceTextField" layoutX="712.0" layoutY="512.0" prefHeight="26.0" prefWidth="103.0" promptText="Price" />
+      <TextField fx:id="expectedPriceTextField" editable="false" layoutX="712.0" layoutY="512.0" onMouseClicked="#expectedPriceTextFieldClicked" prefHeight="26.0" prefWidth="103.0" promptText="Price" />
       <Button fx:id="checkInButton" layoutX="627.0" layoutY="589.0" mnemonicParsing="false" onAction="#checkInButtonClicked" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #00ddff;" text="CHECK IN" textFill="#00ddff">
          <font>
             <Font name="System Bold" size="14.0" />
