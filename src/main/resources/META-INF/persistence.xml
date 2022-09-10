@@ -8,6 +8,9 @@
     <!-- Add persistent Classes -->
     <class>com.pranayharjai.hotelmanagement.Models.UserData</class>
     <class>com.pranayharjai.hotelmanagement.Models.RoomData</class>
+    <class>com.pranayharjai.hotelmanagement.Models.CustomerData</class>
+    <class>com.pranayharjai.hotelmanagement.Models.CheckInData</class>
+    <class>com.pranayharjai.hotelmanagement.Models.BillData</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <!-- localhost:8082 -->

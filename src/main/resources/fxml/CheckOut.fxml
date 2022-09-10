@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="650.0" prefWidth="850.0" style="-fx-background-color: #103040;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pranayharjai.hotelmanagement.Controllers.CheckOutController">
+   <children>
+      <ImageView fitHeight="174.0" fitWidth="850.0" pickOnBounds="true">
+         <image>
+            <Image url="@../Images/primary.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="256.0" layoutY="51.0" prefHeight="78.0" prefWidth="338.0" style="-fx-background-color: #103040;" text="CHECK - OUT">
+         <font>
+            <Font name="Lucida Handwriting Italic" size="45.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+         <textFill>
+            <LinearGradient endY="0.7310606209617673" startX="1.0" startY="0.37878787878787884">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color green="0.8666666746139526" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2079293131828308" green="0.13279999792575836" blue="0.8299999833106995" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="36.0" layoutY="174.0" text="Filter by Name" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="342.0" layoutY="174.0" text="Filter by Id No." textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="626.0" layoutY="174.0" text="Filter by Room No." textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TableView fx:id="checkOutTableView" layoutX="14.0" layoutY="284.0" prefHeight="302.0" prefWidth="822.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="186.39996910095215" text="Name" />
+          <TableColumn fx:id="idNo" prefWidth="105.5999755859375" text="Id No." />
+            <TableColumn fx:id="additionalMembers" prefWidth="162.39996337890625" text="Additional Members" />
+            <TableColumn fx:id="petTag" prefWidth="113.60000610351562" text="Pet Tag" />
+            <TableColumn fx:id="checkInDate" prefWidth="135.99993896484375" text="Check-In Date" />
+            <TableColumn fx:id="roomNo" prefWidth="122.4000244140625" text="Room No." />
+        </columns>
+      </TableView>
+      <TextField fx:id="nameFilterTextField" layoutX="36.0" layoutY="207.0" prefHeight="26.0" prefWidth="166.0" />
+      <TextField fx:id="idNoFilterTextField" layoutX="342.0" layoutY="207.0" prefHeight="26.0" prefWidth="166.0" />
+      <TextField fx:id="roomFilterTextField" layoutX="626.0" layoutY="207.0" prefHeight="26.0" prefWidth="166.0" />
+      <Button fx:id="checkOutButton" layoutX="637.0" layoutY="599.0" mnemonicParsing="false" onAction="#checkOutButtonClicked" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #00ddff;" text="CHECK OUT" textFill="#00ddff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="31.0" prefWidth="87.0" style="-fx-background-color: transparent; -fx-border-color: #00ddff;" text="BACK" textFill="#00ddff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="searchButton" layoutX="350.0" layoutY="243.0" mnemonicParsing="false" onAction="#searchButtonClicked" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #00ddff;" text="SEARCH" textFill="#00ddff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
