@@ -50,7 +50,8 @@ public class HotelManagementMenuController {
         Main.setScene("CheckIn.fxml");
     }
 
-    public void checkOutClicked(MouseEvent mouseEvent) {
+    public void checkOutClicked(MouseEvent mouseEvent) throws IOException {
+        Main.setScene("CheckOut.fxml");
     }
 
     public void petManagementClicked(MouseEvent mouseEvent) {
